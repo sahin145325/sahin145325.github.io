@@ -6,8 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,14 +16,11 @@ header {
   background: #1e3c72;
   padding: 15px;
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 header a {
   color: #fff;
-  margin: 0 14px;
+  margin: 0 12px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -34,57 +29,42 @@ header a {
   max-width: 1100px;
   margin: 40px auto;
   background: #fff;
-  padding: 35px;
-  border-radius: 14px;
+  padding: 30px;
+  border-radius: 12px;
   color: #333;
 }
 
 h1, h2 { text-align: center; }
 
-section { margin-top: 55px; }
+section { margin-top: 40px; }
 
 /* Hizmetler */
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
-  margin-top: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
 }
 
 .service-box {
   background: #f4f6f9;
-  padding: 25px;
-  border-radius: 14px;
-  transition: all 0.3s;
-}
-
-.service-box h3 {
-  margin: 0;
-  font-size: 18px;
-  color: #1e3c72;
-}
-
-.service-box p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-top: 8px;
-  color: #555;
-}
-
-/* Teklif Notu */
-.offer-note {
-  margin-top: 35px;
-  background: #eef3ff;
-  border-left: 6px solid #1e3c72;
-  padding: 18px 22px;
+  padding: 20px;
   border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #1e3c72;
-  text-align: center;
 }
 
-/* Galeri */
+/* TEKLİF NOTU – SADECE EKLENDİ */
+.offer-note {
+  margin-top: 30px;
+  background: #eef3ff;
+  border-left: 5px solid #1e3c72;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: #1e3c72;
+}
+
+/* Galeri – ESKİ ÇALIŞAN HALİ */
 .galeri {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -96,21 +76,21 @@ section { margin-top: 55px; }
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 /* İletişim */
 .contact {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .contact a {
   display: inline-block;
   margin: 10px;
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: 12px 20px;
+  border-radius: 25px;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
@@ -120,19 +100,19 @@ section { margin-top: 55px; }
 .whatsapp { background: #25d366; }
 
 /* Footer */
-.footer {
-  background: #1e3c72;
-  color: #fff;
-  padding: 40px 20px 20px;
-  margin-top: 60px;
+footer {
   text-align: center;
+  color: #fff;
+  padding: 20px;
+  font-size: 14px;
 }
 
 /* Lightbox */
 .lightbox {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
   display: none;
   align-items: center;
   justify-content: center;
@@ -161,25 +141,12 @@ section { margin-top: 55px; }
   <section id="hizmetler">
     <h2>Hizmetlerimiz</h2>
     <div class="services">
-      <div class="service-box">
-        <h3>Endüstriyel Mekanik Tesisat</h3>
-        <p>Fabrika ve tesislere yönelik mekanik imalat ve montaj işleri.</p>
-      </div>
-      <div class="service-box">
-        <h3>Pompa Montajı</h3>
-        <p>Endüstriyel pompa montajı ve devreye alma hizmetleri.</p>
-      </div>
-      <div class="service-box">
-        <h3>UF & RO Sistemleri</h3>
-        <p>Ultrafiltrasyon ve ters osmoz sistemleri montajı.</p>
-      </div>
-      <div class="service-box">
-        <h3>Çelik ve Doğalgaz Hatları</h3>
-        <p>Büyük çaplı çelik ve doğalgaz hatları imalatı.</p>
-      </div>
+      <div class="service-box">Endüstriyel Mekanik Tesisat</div>
+      <div class="service-box">Pompa Montajı ve Devreye Alma</div>
+      <div class="service-box">UF & Ters Osmoz Sistemleri</div>
+      <div class="service-box">Çelik ve Doğalgaz Hatları</div>
     </div>
 
-    <!-- NOT -->
     <div class="offer-note">
       Arıtma tesisleri ve mekanik projeleriniz için bizimle iletişime geçerek teklif alabilirsiniz.
     </div>
@@ -190,6 +157,8 @@ section { margin-top: 55px; }
     <div class="galeri">
       <img src="images/resim1.jpg" onclick="ac(this.src)">
       <img src="images/resim2.jpg" onclick="ac(this.src)">
+      <img src="images/resim3.jpg" onclick="ac(this.src)">
+      <img src="images/resim4.jpg" onclick="ac(this.src)">
     </div>
   </section>
 
@@ -199,7 +168,7 @@ section { margin-top: 55px; }
   </section>
 </div>
 
-<footer class="footer">
+<footer>
   © 2025 Şahin İnşaat Mekanik – Tüm Hakları Saklıdır
 </footer>
 
@@ -208,12 +177,12 @@ section { margin-top: 55px; }
 </div>
 
 <script>
-function ac(src){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightbox-img").src=src;
+function ac(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
 }
-function kapat(){
-  document.getElementById("lightbox").style.display="none";
+function kapat() {
+  document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
