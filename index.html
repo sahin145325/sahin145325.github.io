@@ -1,152 +1,204 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Şahin İnşaat Mekanik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Şahin İnşaat Mekanik</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-    }
+<style>
+html { scroll-behavior: smooth; }
 
-    header {
-      background: #1e3c72;
-      padding: 15px;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
 
-    header a {
-      color: #fff;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+header {
+  background: #1e3c72;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      color: #333;
-    }
+header a {
+  color: #fff;
+  margin: 0 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    h1, h2 {
-      text-align: center;
-    }
+header a:hover { text-decoration: underline; }
 
-    section {
-      margin-top: 40px;
-    }
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 14px;
+  color: #333;
+}
 
-    .galeri {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
-    }
+h1, h2 { text-align: center; }
 
-    .galeri img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+section { margin-top: 55px; }
 
-    .galeri img:hover {
-      transform: scale(1.03);
-    }
+/* Hakkımızda */
+.about {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #444;
+}
 
-    .contact {
-      text-align: center;
-      margin-top: 40px;
-    }
+/* Hizmetler */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
 
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
+.service-box {
+  background: #f4f6f9;
+  padding: 25px;
+  border-radius: 14px;
+  transition: all 0.3s;
+}
 
-    .phone { background: #0b5ed7; }
-    .whatsapp { background: #25d366; }
+.service-box h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1e3c72;
+}
 
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
+.service-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 8px;
+  color: #555;
+}
 
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
+.service-box:hover {
+  background: #e9edf5;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+}
 
-    /* Footer */
-    .footer {
-      background: #1e3c72;
-      color: #fff;
-      padding: 40px 20px 20px;
-      margin-top: 60px;
-    }
+/* Galeri */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
 
-    .footer-content {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
+.galeri img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .footer h3 {
-      margin-bottom: 15px;
-      font-size: 18px;
-    }
+.galeri img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
-    .footer p, .footer li {
-      font-size: 14px;
-      line-height: 1.6;
-    }
+.gallery-note {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
 
-    .footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+/* İletişim */
+.contact {
+  text-align: center;
+  margin-top: 50px;
+}
 
-    .footer a {
-      color: #fff;
-      text-decoration: none;
-    }
+.contact p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.3);
-      font-size: 13px;
-    }
-  </style>
+.phone { background: #0b5ed7; }
+.whatsapp { background: #25d366; }
+
+/* Footer */
+.footer {
+  background: #1e3c72;
+  color: #fff;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.footer h3 { margin-bottom: 15px; }
+
+.footer p, .footer li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  font-size: 13px;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -163,27 +215,62 @@
   <h1>Şahin İnşaat Mekanik</h1>
   <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
-  <section id="hakkimizda">
-    <p>
-      Erzurum merkezli firmamız; Türkiye geneli ve Avrupa’da
-      endüstriyel mekanik, çelik imalat ve altyapı projelerinde
-      güvenilir çözümler sunmaktadır.
-    </p>
+  <section id="hakkimizda" class="about">
+    Erzurum merkezli firmamız; Türkiye ve Avrupa genelinde
+    endüstriyel mekanik tesisat, çelik imalat ve altyapı projelerinde
+    <strong>kalite, güven ve zamanında teslim</strong> anlayışıyla hizmet vermektedir.
   </section>
 
   <section id="hizmetler">
     <h2>Hizmetlerimiz</h2>
-    <ul>
-      <li>Endüstriyel Mekanik Tesisat</li>
-      <li>Arıtma Tesisleri</li>
-      <li>Çelik İmalat ve Montaj</li>
-      <li>Pompa Odaları</li>
-      <li>Proje ve Taşeronluk Hizmetleri</li>
-    </ul>
+    <div class="services">
+
+      <div class="service-box">
+        <h3>Endüstriyel Mekanik Tesisat</h3>
+        <p>Fabrika, tesis ve büyük ölçekli projelerde mekanik tesisat imalat ve montaj işleri.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Pompa Montajı ve Devreye Alma</h3>
+        <p>Endüstriyel pompa sistemlerinin montajı, hizalama ve sorunsuz devreye alınması.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>UF (Ultrafiltrasyon) Sistemleri</h3>
+        <p>UF cihazları montajı, bağlantıları ve arıtma sistemlerine entegrasyonu.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Ters Osmoz (RO) Sistemleri</h3>
+        <p>Ters osmoz arıtma sistemleri montajı ve yüksek verimli su üretim çözümleri.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Büyük Çaplı Çelik Hatlar</h3>
+        <p>Kaynaklı çelik boru hatları imalatı, montajı ve saha uygulamaları.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Doğalgaz Hatları</h3>
+        <p>Endüstriyel doğalgaz hatları imalat ve montaj işleri, proje standartlarına uygun uygulamalar.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Çelik İmalat ve Montaj</h3>
+        <p>Platform, taşıyıcı sistemler ve özel çelik konstrüksiyon imalatları.</p>
+      </div>
+
+      <div class="service-box">
+        <h3>Proje ve Taşeronluk Hizmetleri</h3>
+        <p>İhale ve taşeronluk kapsamında anahtar teslim mekanik çözümler.</p>
+      </div>
+
+    </div>
   </section>
 
   <section id="projeler">
     <h2>Projelerimizden Görseller</h2>
+    <div class="gallery-note">Görsellere tıklayarak büyütebilirsiniz</div>
     <div class="galeri">
       <img src="images/resim1.jpg" onclick="ac(this.src)">
       <img src="images/resim2.jpg" onclick="ac(this.src)">
@@ -193,8 +280,9 @@
   </section>
 
   <section id="iletisim" class="contact">
+    <p>Proje ve teklif talepleriniz için bizimle iletişime geçin</p>
     <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
-    <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
+    <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp ile Teklif Al</a>
   </section>
 </div>
 
@@ -203,17 +291,16 @@
     <div>
       <h3>Şahin İnşaat Mekanik</h3>
       <p>
-        Endüstriyel mekanik tesisat, çelik imalat ve altyapı
-        projelerinde Erzurum merkezli olarak Türkiye ve Avrupa
-        genelinde hizmet vermekteyiz.
+        Endüstriyel mekanik, arıtma sistemleri ve çelik hatlar alanında
+        Türkiye ve Avrupa genelinde hizmet vermekteyiz.
       </p>
     </div>
 
     <div>
       <h3>İletişim</h3>
       <ul>
-        <li>📞 <a href="tel:05349392125">0534 939 21 25</a></li>
-        <li>💬 <a href="https://wa.me/905349392125" target="_blank">WhatsApp</a></li>
+        <li>📞 0534 939 21 25</li>
+        <li>💬 WhatsApp</li>
         <li>📍 Erzurum / Türkiye</li>
         <li>🌍 Türkiye & Avrupa</li>
       </ul>
@@ -230,13 +317,13 @@
 </div>
 
 <script>
-  function ac(src) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-  }
-  function kapat() {
-    document.getElementById("lightbox").style.display = "none";
-  }
+function ac(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+function kapat() {
+  document.getElementById("lightbox").style.display = "none";
+}
 </script>
 
 </body>
