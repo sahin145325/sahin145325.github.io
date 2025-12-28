@@ -1,135 +1,184 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mekanik Sistemler | Firma Adı</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mekanik & Çelik İmalat</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+}
 
-        header {
-            background: #1f2933;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+header {
+    background: linear-gradient(135deg, #0a3d62, #1e90ff);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
 
-        section {
-            padding: 30px;
-            max-width: 1100px;
-            margin: auto;
-        }
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
 
-        /* GALERİ */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
+section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
 
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: transform 0.3s;
-        }
+h2 {
+    text-align: center;
+    color: #0a3d62;
+    margin-bottom: 30px;
+}
 
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
+/* Hizmetler */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 
-        /* BÜYÜTME (POPUP) */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-        }
+.service-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
 
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 6px;
-        }
+.service-box h3 {
+    color: #1e90ff;
+}
 
-        .lightbox:active {
-            display: none;
-        }
+/* Galeri */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
 
-        footer {
-            background: #1f2933;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal (resim büyütme) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal img {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 5% auto;
+    border-radius: 10px;
+}
+
+.modal:target {
+    display: block;
+}
+
+/* İletişim */
+.contact {
+    text-align: center;
+}
+
+.contact a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 25px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+/* Footer */
+footer {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>MEKANİK SİSTEMLER</h1>
-    <p>Erzurum • Türkiye • Avrupa</p>
+    <h1>Mekanik & Çelik İmalat</h1>
+    <p>Arıtma tesisleri, pompa odaları ve mekanik projeleriniz için profesyonel çözümler</p>
 </header>
 
 <section>
     <h2>Hizmetlerimiz</h2>
-    <p style="text-align:center">
-        Isıtma • Soğutma • Havalandırma • Mekanik Tesisat
-    </p>
+    <div class="services">
+        <div class="service-box">
+            <h3>Mekanik Tesisat</h3>
+            <p>Endüstriyel ve altyapı projeleri</p>
+        </div>
+        <div class="service-box">
+            <h3>Çelik & Kaynak</h3>
+            <p>Paslanmaz ve karbon çelik imalat</p>
+        </div>
+        <div class="service-box">
+            <h3>Arıtma Tesisleri</h3>
+            <p>Pompa odaları ve mekanik sistemler</p>
+        </div>
+    </div>
 </section>
 
 <section>
     <h2>Projelerimiz</h2>
-
     <div class="gallery">
-        <!-- RESİMLER BURAYA -->
-        <img src="images/1.jpg" onclick="openLightbox(this.src)">
-        <img src="images/2.jpg" onclick="openLightbox(this.src)">
-        <img src="images/3.jpg" onclick="openLightbox(this.src)">
-        <img src="images/4.jpg" onclick="openLightbox(this.src)">
+        <a href="#img1"><img src="images/resim1.jpg"></a>
+        <a href="#img2"><img src="images/resim2.jpg"></a>
+        <a href="#img3"><img src="images/resim3.jpg"></a>
     </div>
 </section>
 
-<footer>
+<!-- Resim büyütme -->
+<div id="img1" class="modal"><a href="#"><img src="images/resim1.jpg"></a></div>
+<div id="img2" class="modal"><a href="#"><img src="images/resim2.jpg"></a></div>
+<div id="img3" class="modal"><a href="#"><img src="images/resim3.jpg"></a></div>
+
+<section class="contact">
+    <h2>İletişim</h2>
     <p>📞 0534 939 21 25</p>
-    <p>© 2025 Mekanik Sistemler</p>
+    <a href="https://wa.me/905349392125" target="_blank">WhatsApp'tan Teklif Al</a>
+</section>
+
+<footer>
+    © 2025 Mekanik & Çelik İmalat – Türkiye ve Komşu Ülkeler
 </footer>
-
-<!-- BÜYÜTME ALANI -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <img id="lightboxImg">
-</div>
-
-<script>
-    function openLightbox(src) {
-        document.getElementById("lightboxImg").src = src;
-        document.getElementById("lightbox").style.display = "flex";
-    }
-
-    function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
-    }
-</script>
 
 </body>
 </html>
