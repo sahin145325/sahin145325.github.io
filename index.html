@@ -1,111 +1,135 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Şahin İnşaat Mekanik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Mekanik Sistemler | Firma Adı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      color: #333;
-    }
+        header {
+            background: #1f2933;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-    h1, h2 {
-      text-align: center;
-    }
+        section {
+            padding: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    .galeri {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
-    }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    .galeri img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+        /* GALERİ */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
 
-    .contact {
-      text-align: center;
-      margin-top: 30px;
-    }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: transform 0.3s;
+        }
 
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
 
-    .phone {
-      background: #0b5ed7;
-    }
+        /* BÜYÜTME (POPUP) */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
 
-    .whatsapp {
-      background: #25d366;
-    }
-  </style>
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 6px;
+        }
+
+        .lightbox:active {
+            display: none;
+        }
+
+        footer {
+            background: #1f2933;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Şahin İnşaat Mekanik</h1>
-    <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
-    <h2>Projelerimizden Görseller</h2>
-<a href="images/resim1.jpg" class="lightbox">
-  <img src="images/resim1.jpg">
-  .lightbox img {
-  cursor: pointer;
-}
+<header>
+    <h1>MEKANİK SİSTEMLER</h1>
+    <p>Erzurum • Türkiye • Avrupa</p>
+</header>
 
-/* Arka plan */
-.lightbox:target {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Büyük resim */
-.lightbox:target img {
-  max-width: 90%;
-  max-height: 90%;
-}
-</a>
-
-    <p>
-      Arıtma tesisleri, mekanik ve çelik imalat, pompa odaları ve endüstriyel
-      projelerde profesyonel çözümler sunuyoruz.
+<section>
+    <h2>Hizmetlerimiz</h2>
+    <p style="text-align:center">
+        Isıtma • Soğutma • Havalandırma • Mekanik Tesisat
     </p>
+</section>
 
-    <div class="contact">
-      <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
-      <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
+<section>
+    <h2>Projelerimiz</h2>
+
+    <div class="gallery">
+        <!-- RESİMLER BURAYA -->
+        <img src="images/1.jpg" onclick="openLightbox(this.src)">
+        <img src="images/2.jpg" onclick="openLightbox(this.src)">
+        <img src="images/3.jpg" onclick="openLightbox(this.src)">
+        <img src="images/4.jpg" onclick="openLightbox(this.src)">
     </div>
-  </div>
+</section>
+
+<footer>
+    <p>📞 0534 939 21 25</p>
+    <p>© 2025 Mekanik Sistemler</p>
+</footer>
+
+<!-- BÜYÜTME ALANI -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg">
+</div>
+
+<script>
+    function openLightbox(src) {
+        document.getElementById("lightboxImg").src = src;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
 </body>
 </html>
-
