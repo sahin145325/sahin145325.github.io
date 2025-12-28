@@ -1,184 +1,92 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mekanik & Çelik İmalat</title>
+  <meta charset="UTF-8">
+  <title>Şahin İnşaat Mekanik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #333;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
 
-header {
-    background: linear-gradient(135deg, #0a3d62, #1e90ff);
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-}
+    .container {
+      max-width: 1100px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      color: #333;
+    }
 
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
+    h1, h2 {
+      text-align: center;
+    }
 
-header p {
-    font-size: 18px;
-    margin-top: 10px;
-}
+    .galeri {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-section {
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
+    .galeri img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
 
-h2 {
-    text-align: center;
-    color: #0a3d62;
-    margin-bottom: 30px;
-}
+    .contact {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-/* Hizmetler */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
 
-.service-box {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
+    .phone {
+      background: #0b5ed7;
+    }
 
-.service-box h3 {
-    color: #1e90ff;
-}
-
-/* Galeri */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Modal (resim büyütme) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-}
-
-.modal img {
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-    margin: 5% auto;
-    border-radius: 10px;
-}
-
-.modal:target {
-    display: block;
-}
-
-/* İletişim */
-.contact {
-    text-align: center;
-}
-
-.contact a {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 15px 25px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 30px;
-}
-
-/* Footer */
-footer {
-    background: #0a3d62;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
+    .whatsapp {
+      background: #25d366;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
+    <h1>Şahin İnşaat Mekanik</h1>
+    <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
-<header>
-    <h1>Mekanik & Çelik İmalat</h1>
-    <p>Arıtma tesisleri, pompa odaları ve mekanik projeleriniz için profesyonel çözümler</p>
-</header>
+    <h2>Projelerimizden Görseller</h2>
 
-<section>
-    <h2>Hizmetlerimiz</h2>
-    <div class="services">
-        <div class="service-box">
-            <h3>Mekanik Tesisat</h3>
-            <p>Endüstriyel ve altyapı projeleri</p>
-        </div>
-        <div class="service-box">
-            <h3>Çelik & Kaynak</h3>
-            <p>Paslanmaz ve karbon çelik imalat</p>
-        </div>
-        <div class="service-box">
-            <h3>Arıtma Tesisleri</h3>
-            <p>Pompa odaları ve mekanik sistemler</p>
-        </div>
+    <div class="galeri">
+      <img src="images/resim1.jpg" alt="Proje 1">
+      <img src="images/resim2.jpg" alt="Proje 2">
+      <img src="images/resim3.jpg" alt="Proje 3">
+      <img src="images/resim4.jpg" alt="Proje 4">
     </div>
-</section>
 
-<section>
-    <h2>Projelerimiz</h2>
-    <div class="gallery">
-        <a href="#img1"><img src="images/resim1.jpg"></a>
-        <a href="#img2"><img src="images/resim2.jpg"></a>
-        <a href="#img3"><img src="images/resim3.jpg"></a>
+    <p>
+      Arıtma tesisleri, mekanik ve çelik imalat, pompa odaları ve endüstriyel
+      projelerde profesyonel çözümler sunuyoruz.
+    </p>
+
+    <div class="contact">
+      <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
+      <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
     </div>
-</section>
-
-<!-- Resim büyütme -->
-<div id="img1" class="modal"><a href="#"><img src="images/resim1.jpg"></a></div>
-<div id="img2" class="modal"><a href="#"><img src="images/resim2.jpg"></a></div>
-<div id="img3" class="modal"><a href="#"><img src="images/resim3.jpg"></a></div>
-
-<section class="contact">
-    <h2>İletişim</h2>
-    <p>📞 0534 939 21 25</p>
-    <a href="https://wa.me/905349392125" target="_blank">WhatsApp'tan Teklif Al</a>
-</section>
-
-<footer>
-    © 2025 Mekanik & Çelik İmalat – Türkiye ve Komşu Ülkeler
-</footer>
-
+  </div>
 </body>
 </html>
