@@ -55,7 +55,6 @@ section { margin-top: 55px; }
   background: #f4f6f9;
   padding: 25px;
   border-radius: 14px;
-  transition: all 0.3s;
 }
 
 .service-box h3 {
@@ -85,6 +84,13 @@ section { margin-top: 55px; }
 }
 
 /* Galeri */
+.gallery-note {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
 .galeri {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -123,7 +129,7 @@ section { margin-top: 55px; }
 .footer {
   background: #1e3c72;
   color: #fff;
-  padding: 40px 20px 20px;
+  padding: 30px;
   margin-top: 60px;
   text-align: center;
 }
@@ -161,25 +167,29 @@ section { margin-top: 55px; }
   <section id="hizmetler">
     <h2>Hizmetlerimiz</h2>
     <div class="services">
+
       <div class="service-box">
         <h3>Endüstriyel Mekanik Tesisat</h3>
-        <p>Fabrika ve tesislere yönelik mekanik imalat ve montaj işleri.</p>
+        <p>Fabrika ve büyük ölçekli tesislerde mekanik imalat ve montaj.</p>
       </div>
+
       <div class="service-box">
-        <h3>Pompa Montajı</h3>
-        <p>Endüstriyel pompa montajı ve devreye alma hizmetleri.</p>
+        <h3>Pompa Montajı ve Devreye Alma</h3>
+        <p>Endüstriyel pompa sistemlerinin montajı ve devreye alınması.</p>
       </div>
+
       <div class="service-box">
-        <h3>UF & RO Sistemleri</h3>
-        <p>Ultrafiltrasyon ve ters osmoz sistemleri montajı.</p>
+        <h3>UF ve Ters Osmoz Sistemleri</h3>
+        <p>Ultrafiltrasyon ve RO arıtma sistemleri montajı.</p>
       </div>
+
       <div class="service-box">
-        <h3>Çelik ve Doğalgaz Hatları</h3>
-        <p>Büyük çaplı çelik ve doğalgaz hatları imalatı.</p>
+        <h3>Büyük Çaplı Çelik ve Doğalgaz Hatları</h3>
+        <p>Kaynaklı çelik ve endüstriyel doğalgaz hatları uygulamaları.</p>
       </div>
+
     </div>
 
-    <!-- NOT -->
     <div class="offer-note">
       Arıtma tesisleri ve mekanik projeleriniz için bizimle iletişime geçerek teklif alabilirsiniz.
     </div>
@@ -187,9 +197,15 @@ section { margin-top: 55px; }
 
   <section id="projeler">
     <h2>Projelerimizden Görseller</h2>
+    <div class="gallery-note">
+      Devam eden ve tamamlanan projelerimizden örnekler
+    </div>
+
     <div class="galeri">
       <img src="images/resim1.jpg" onclick="ac(this.src)">
       <img src="images/resim2.jpg" onclick="ac(this.src)">
+      <img src="images/resim3.jpg" onclick="ac(this.src)">
+      <img src="images/resim4.jpg" onclick="ac(this.src)">
     </div>
   </section>
 
