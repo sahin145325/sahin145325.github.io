@@ -1,250 +1,177 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Şahin İnşaat Mekanik</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Şahin İnşaat Mekanik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:linear-gradient(135deg,#1e3c72,#2a5298);
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
 
-/* HEADER */
-header{
-  background:#0f2f5c;
-  padding:15px 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+    header {
+      background: #1e3c72;
+      padding: 15px;
+      text-align: center;
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:#fff;
-  font-size:20px;
-  font-weight:bold;
-}
+    header a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.logo img{
-  height:50px;
-}
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      color: #333;
+    }
 
-nav a{
-  color:#fff;
-  margin:0 10px;
-  text-decoration:none;
-  font-weight:bold;
-}
+    h1, h2 {
+      text-align: center;
+    }
 
-nav a:hover{
-  text-decoration:underline;
-}
+    section {
+      margin-top: 40px;
+    }
 
-/* HERO */
-.hero{
-  text-align:center;
-  color:#fff;
-  padding:70px 20px 40px;
-}
+    ul {
+      line-height: 1.8;
+    }
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:10px;
-}
+    .galeri {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-.hero p{
-  font-size:20px;
-  opacity:0.9;
-}
+    .galeri img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-/* CONTAINER */
-.container{
-  max-width:1100px;
-  margin:-30px auto 40px;
-  background:#fff;
-  padding:40px 30px;
-  border-radius:14px;
-  color:#333;
-}
+    .teklif {
+      background: #f1f5ff;
+      padding: 20px;
+      margin-top: 40px;
+      border-left: 6px solid #1e3c72;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
 
-section{
-  margin-top:45px;
-}
+    .contact {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-h2{
-  text-align:center;
-  margin-bottom:20px;
-}
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
 
-/* HİZMETLER */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
+    .phone { background: #0b5ed7; }
+    .whatsapp { background: #25d366; }
 
-.service{
-  background:#f4f6fb;
-  padding:15px;
-  border-left:5px solid #1e3c72;
-  font-weight:bold;
-}
+    footer {
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      font-size: 14px;
+    }
 
-/* GALERİ */
-.galeri{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
 
-.galeri img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.galeri img:hover{
-  transform:scale(1.03);
-}
-
-/* TEKLİF */
-.teklif{
-  background:#eef2ff;
-  margin-top:40px;
-  padding:20px;
-  font-size:18px;
-  text-align:center;
-  font-weight:bold;
-  border-left:6px solid #1e3c72;
-}
-
-/* İLETİŞİM */
-.contact{
-  text-align:center;
-  margin-top:30px;
-}
-
-.contact a{
-  display:inline-block;
-  margin:10px;
-  padding:12px 22px;
-  border-radius:25px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:bold;
-}
-
-.phone{background:#0b5ed7;}
-.whatsapp{background:#25d366;}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  color:#fff;
-  padding:20px;
-  font-size:14px;
-}
-
-/* LIGHTBOX */
-.lightbox{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.8);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
-}
-
-.lightbox img{
-  max-width:90%;
-  max-height:90%;
-}
-
-/* MOBİL */
-@media(max-width:768px){
-  header{flex-direction:column;text-align:center;}
-  nav{margin-top:10px;}
-  .hero h1{font-size:32px;}
-}
-</style>
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="images/logo.png">
-    Şahin İnşaat Mekanik
-  </div>
-  <nav>
-    <a href="#hakkimizda">Hakkımızda</a>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#projeler">Projeler</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
+  <a href="#anasayfa">Ana Sayfa</a>
+  <a href="#hakkimizda">Hakkımızda</a>
+  <a href="#hizmetler">Hizmetler</a>
+  <a href="#projeler">Projeler</a>
+  <a href="#iletisim">İletişim</a>
 </header>
 
-<div class="hero">
-  <h1>Endüstriyel ve Mekanik Çözümler</h1>
-  <p>Türkiye ve Avrupa genelinde güvenilir mühendislik hizmetleri</p>
-</div>
+<div class="container" id="anasayfa">
+  <h1>Şahin İnşaat Mekanik</h1>
+  <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
-<div class="container">
+  <section id="hakkimizda">
+    <p>
+      Erzurum merkezli firmamız; Türkiye geneli ve Avrupa’da
+      endüstriyel mekanik, çelik imalat ve altyapı projelerinde
+      güvenilir çözümler sunmaktadır.
+    </p>
+  </section>
 
-<section id="hakkimizda">
-  <p>
-    Erzurum merkezli firmamız; endüstriyel mekanik tesisat,
-    arıtma sistemleri, çelik imalat ve altyapı projelerinde
-    profesyonel çözümler sunmaktadır.
-  </p>
-</section>
+  <section id="hizmetler">
+    <h2>Hizmetlerimiz</h2>
+    <ul>
+      <li>Endüstriyel Mekanik Tesisat</li>
+      <li>Arıtma Tesisleri ve Ters Ozmoz Sistemleri</li>
+      <li>Pompa Montajı ve UF Cihazları</li>
+      <li>Çelik İmalat ve Montaj</li>
+      <li>Büyük Çelik Hatlar ve Doğalgaz Hatları</li>
+      <li>Proje ve Taşeronluk Hizmetleri</li>
+    </ul>
+  </section>
 
-<section id="hizmetler">
-  <h2>Hizmetlerimiz</h2>
-  <div class="services">
-    <div class="service">Endüstriyel Mekanik Tesisat</div>
-    <div class="service">Arıtma ve Ters Ozmoz Sistemleri</div>
-    <div class="service">Pompa & UF Cihaz Montajları</div>
-    <div class="service">Çelik İmalat ve Montaj</div>
-    <div class="service">Büyük Çelik ve Doğalgaz Hatları</div>
-    <div class="service">Proje & Taşeronluk Hizmetleri</div>
+  <section id="projeler">
+    <h2>Projelerimizden Görseller</h2>
+    <div class="galeri">
+      <img src="images/resim1.jpg" onclick="ac(this.src)">
+      <img src="images/resim2.jpg" onclick="ac(this.src)">
+      <img src="images/resim3.jpg" onclick="ac(this.src)">
+      <img src="images/resim4.jpg" onclick="ac(this.src)">
+    </div>
+  </section>
+
+  <div class="teklif">
+    Arıtma tesisleri ve mekanik projeleriniz için teklif alınız.
   </div>
-</section>
 
-<section id="projeler">
-  <h2>Projelerimizden Görseller</h2>
-  <div class="galeri">
-    <img src="images/resim1.jpg" onclick="ac(this.src)">
-    <img src="images/resim2.jpg" onclick="ac(this.src)">
-    <img src="images/resim3.jpg" onclick="ac(this.src)">
-    <img src="images/resim4.jpg" onclick="ac(this.src)">
-  </div>
-</section>
-
-<div class="teklif">
-  Arıtma tesisleri ve mekanik projeleriniz için teklif alınız.
-</div>
-
-<section id="iletisim" class="contact">
-  <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
-  <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
-</section>
-
+  <section id="iletisim" class="contact">
+    <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
+    <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
+  </section>
 </div>
 
 <footer>
-© 2025 Şahin İnşaat Mekanik – Erzurum | Tüm Hakları Saklıdır
+  © 2025 Şahin İnşaat Mekanik – Erzurum | Tüm Hakları Saklıdır
 </footer>
 
 <div class="lightbox" id="lightbox" onclick="kapat()">
@@ -252,13 +179,13 @@ footer{
 </div>
 
 <script>
-function ac(src){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightbox-img").src=src;
-}
-function kapat(){
-  document.getElementById("lightbox").style.display="none";
-}
+  function ac(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+  }
+  function kapat() {
+    document.getElementById("lightbox").style.display = "none";
+  }
 </script>
 
 </body>
