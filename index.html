@@ -70,13 +70,31 @@
     <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
     <h2>Projelerimizden Görseller</h2>
+<a href="images/resim1.jpg" class="lightbox">
+  <img src="images/resim1.jpg">
+  .lightbox img {
+  cursor: pointer;
+}
 
-    <div class="galeri">
-      <img src="images/resim1.jpg" alt="Proje 1">
-      <img src="images/resim2.jpg" alt="Proje 2">
-      <img src="images/resim3.jpg" alt="Proje 3">
-      <img src="images/resim4.jpg" alt="Proje 4">
-    </div>
+/* Arka plan */
+.lightbox:target {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Büyük resim */
+.lightbox:target img {
+  max-width: 90%;
+  max-height: 90%;
+}
+</a>
 
     <p>
       Arıtma tesisleri, mekanik ve çelik imalat, pompa odaları ve endüstriyel
@@ -90,3 +108,4 @@
   </div>
 </body>
 </html>
+
