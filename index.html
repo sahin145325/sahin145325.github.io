@@ -12,9 +12,22 @@
       background: linear-gradient(135deg, #1e3c72, #2a5298);
     }
 
+    header {
+      background: #1e3c72;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .container {
       max-width: 1100px;
-      margin: 50px auto;
+      margin: 40px auto;
       background: #fff;
       padding: 30px;
       border-radius: 12px;
@@ -23,6 +36,10 @@
 
     h1, h2 {
       text-align: center;
+    }
+
+    section {
+      margin-top: 40px;
     }
 
     .galeri {
@@ -37,6 +54,7 @@
       height: 200px;
       object-fit: cover;
       border-radius: 8px;
+      cursor: pointer;
     }
 
     .contact {
@@ -54,39 +72,101 @@
       font-weight: bold;
     }
 
-    .phone {
-      background: #0b5ed7;
+    .phone { background: #0b5ed7; }
+    .whatsapp { background: #25d366; }
+
+    footer {
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      font-size: 14px;
     }
 
-    .whatsapp {
-      background: #25d366;
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Şahin İnşaat Mekanik</h1>
-    <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
-    <h2>Projelerimizden Görseller</h2>
+<header>
+  <a href="#anasayfa">Ana Sayfa</a>
+  <a href="#hakkimizda">Hakkımızda</a>
+  <a href="#hizmetler">Hizmetler</a>
+  <a href="#projeler">Projeler</a>
+  <a href="#iletisim">İletişim</a>
+</header>
 
-    <div class="galeri">
-      <img src="images/resim1.jpg" alt="Proje 1">
-      <img src="images/resim2.jpg" alt="Proje 2">
-      <img src="images/resim3.jpg" alt="Proje 3">
-      <img src="images/resim4.jpg" alt="Proje 4">
-    </div>
+<div class="container" id="anasayfa">
+  <h1>Şahin İnşaat Mekanik</h1>
+  <h2>Endüstriyel ve Mekanik Çözümler</h2>
 
+  <section id="hakkimizda">
     <p>
-      Arıtma tesisleri, mekanik ve çelik imalat, pompa odaları ve endüstriyel
-      projelerde profesyonel çözümler sunuyoruz.
+      Erzurum merkezli firmamız; Türkiye geneli ve Avrupa’da
+      endüstriyel mekanik, çelik imalat ve altyapı projelerinde
+      güvenilir çözümler sunmaktadır.
     </p>
+  </section>
 
-    <div class="contact">
-      <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
-      <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
+  <section id="hizmetler">
+    <h2>Hizmetlerimiz</h2>
+    <ul>
+      <li>Endüstriyel Mekanik Tesisat</li>
+      <li>Arıtma Tesisleri</li>
+      <li>Çelik İmalat ve Montaj</li>
+      <li>Pompa Odaları</li>
+      <li>Proje ve Taşeronluk Hizmetleri</li>
+    </ul>
+  </section>
+
+  <section id="projeler">
+    <h2>Projelerimizden Görseller</h2>
+    <div class="galeri">
+      <img src="images/resim1.jpg" onclick="ac(this.src)">
+      <img src="images/resim2.jpg" onclick="ac(this.src)">
+      <img src="images/resim3.jpg" onclick="ac(this.src)">
+      <img src="images/resim4.jpg" onclick="ac(this.src)">
     </div>
-  </div>
+  </section>
+
+  <section id="iletisim" class="contact">
+    <a class="phone" href="tel:05349392125">📞 0534 939 21 25</a>
+    <a class="whatsapp" href="https://wa.me/905349392125" target="_blank">💬 WhatsApp</a>
+  </section>
+</div>
+
+<footer>
+  © 2025 Şahin İnşaat Mekanik – Erzurum | Tüm Hakları Saklıdır
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="kapat()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+  function ac(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+  }
+  function kapat() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
 </body>
 </html>
